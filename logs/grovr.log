@@ -1,0 +1,65 @@
+2021-04-04 11:23:32,165 INFO: Grovr startup [in /Users/aaron/dev/grovr/app/__init__.py:34]
+2021-04-04 11:23:38,901 ERROR: Exception on /edit_profile [GET] [in /Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/aaron/dev/grovr/app/routes.py", line 84, in edit_profile
+    form = EditProfileForm()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+TypeError: __init__() missing 1 required positional argument: 'original_username'
+2021-04-04 11:23:42,384 ERROR: Exception on /edit_profile [GET] [in /Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/aaron/dev/grovr/app/routes.py", line 84, in edit_profile
+    form = EditProfileForm()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+TypeError: __init__() missing 1 required positional argument: 'original_username'
+2021-04-04 11:24:34,155 ERROR: Exception on /edit_profile [GET] [in /Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/aaron/dev/grovr/app/routes.py", line 84, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+TypeError: __init__() missing 1 required positional argument: 'original_username'
+2021-04-04 11:24:39,369 INFO: Grovr startup [in /Users/aaron/dev/grovr/app/__init__.py:34]
