@@ -63,3 +63,7 @@ Traceback (most recent call last):
     return type.__call__(cls, *args, **kwargs)
 TypeError: __init__() missing 1 required positional argument: 'original_username'
 2021-04-04 11:24:39,369 INFO: Grovr startup [in /Users/aaron/dev/grovr/app/__init__.py:34]
+2021-04-06 06:55:15,275 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
+2021-04-06 06:55:33,665 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
+2021-04-06 06:55:38,622 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
+2021-04-07 20:32:48,322 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
