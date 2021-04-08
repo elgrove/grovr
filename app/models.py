@@ -15,6 +15,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(128), index=True, unique=True)
     password_hash = db.Column(db.String(128))
+    posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=dt.utcnow)
     followed = db.relationship(
@@ -58,7 +59,7 @@ class User(UserMixin, db.Model):
         # get posts by user themself
         own_posts = Post.query.filter_by(user_id = self.id)
         # union and sort by timestamp desc
-        return followed_posts.union(own).order_by(Post.timestamp.desc())
+        return followed_posts.union(own_posts).order_by(Post.timestamp.desc())
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
