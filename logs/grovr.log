@@ -1,79 +1,20 @@
-2021-04-04 11:23:32,165 INFO: Grovr startup [in /Users/aaron/dev/grovr/app/__init__.py:34]
-2021-04-04 11:23:38,901 ERROR: Exception on /edit_profile [GET] [in /Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py:1891]
+2021-05-04 21:49:30,658 ERROR: Exception on /explore [GET] [in /usr/local/lib/python3.9/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+  File "/usr/local/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
     raise value
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+  File "/usr/local/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/aaron/dev/grovr/app/routes.py", line 84, in edit_profile
-    form = EditProfileForm()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
-    return type.__call__(cls, *args, **kwargs)
-TypeError: __init__() missing 1 required positional argument: 'original_username'
-2021-04-04 11:23:42,384 ERROR: Exception on /edit_profile [GET] [in /Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/aaron/dev/grovr/app/routes.py", line 84, in edit_profile
-    form = EditProfileForm()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
-    return type.__call__(cls, *args, **kwargs)
-TypeError: __init__() missing 1 required positional argument: 'original_username'
-2021-04-04 11:24:34,155 ERROR: Exception on /edit_profile [GET] [in /Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/aaron/dev/grovr/app/routes.py", line 84, in edit_profile
-    form = EditProfileForm(current_user.username)
-  File "/Users/aaron/dev/grovr/venv/lib/python3.9/site-packages/wtforms/form.py", line 208, in __call__
-    return type.__call__(cls, *args, **kwargs)
-TypeError: __init__() missing 1 required positional argument: 'original_username'
-2021-04-04 11:24:39,369 INFO: Grovr startup [in /Users/aaron/dev/grovr/app/__init__.py:34]
-2021-04-06 06:55:15,275 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-06 06:55:33,665 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-06 06:55:38,622 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-07 20:32:48,322 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:19:12,635 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:19:26,207 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:19:44,430 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:28:20,426 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:29:03,727 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:29:59,059 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:31:02,852 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:33:26,345 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:33:39,676 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
-2021-04-08 08:34:08,443 INFO: Grovr startup [in /home/aaron/dev/grovr/app/__init__.py:34]
+  File "/Users/aaron/dev/grovr/app/routes.py", line 136, in explore
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+NameError: name 'Post' is not defined
+2021-05-04 21:49:37,207 INFO: Grovr startup [in /Users/aaron/dev/grovr/app/__init__.py:34]
