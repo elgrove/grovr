@@ -12,6 +12,8 @@ def before_request():
         current_user.last_seen = dt.utcnow()
         db.session.commit()
 
+# -- CONTENT PAGES -- #
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
@@ -23,8 +25,43 @@ def index():
         db.session.commit()
         flash('Posted!')
         return redirect(url_for('index'))
-    posts = current_user.home_feed_posts().all()
-    return render_template('index.html', title='Home - Grovr', form=form, posts=posts)
+    page = request.args.get('page', 1, type=int)
+    posts = current_user.home_feed_posts().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('index', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('index', page=posts.prev_num) \
+        if posts.has_prev else None
+    return render_template('index.html', title='Home - Grovr', form=form, posts=posts.items)
+
+@app.route('/explore')
+@login_required
+def explore():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('explore', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('explore', page=posts.prev_num) \
+        if posts.has_prev else None
+    return render_template('index.html', title='Explore', posts=posts.items,
+        next_url=next_url, prev_url=prev_url)
+
+@app.route('/user/<username>')
+@login_required
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('user', username=user.username, page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('user', username=user.username, page=posts.prev_num) \
+        if posts.has_prev else None
+    form = EmptyForm()
+    return render_template('user.html', user=user, posts=posts, form=form,
+        next_url=next_url, prev_url=prev_url)
+
+# -- FUNCTIONAL PAGES -- #
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -65,17 +102,6 @@ def register():
         flash('You are now registered, please log in')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register - Grovr', form=form)
-
-@app.route('/user/<username>')
-@login_required
-def user(username):
-    user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test 1'},
-        {'author': user, 'body': 'Test 2'}
-    ]
-    form = EmptyForm()
-    return render_template('user.html', user=user, posts=posts, form=form)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
@@ -130,8 +156,3 @@ def unfollow(username):
     else:
         return redirect(url_for('index'))
 
-@app.route('/explore')
-@login_required
-def explore():
-    posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html', title='Explore', posts=posts)
